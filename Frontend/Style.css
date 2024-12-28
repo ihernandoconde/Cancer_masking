@@ -1,4 +1,4 @@
-*{ /* the asterisk is the means that this applies to everything*/
+*{ /* the asterisk means that this applies to everything*/
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -10,14 +10,13 @@
     height: 100px;
     display: flex; /*i.e . Flexible: makes sure the way its elements (flex items) are arranged within the container can be changed*/
     justify-content: center; /*horizontal alignment*/
-    align-items: center; /*vertical alignment*/
+    align-items: center; /*Direction alignment perpendicular to that of the flex box. In this case flex box is horizontal therefore: vertical alignment*/
     font-size: 1.2rem; /* 1 rem = 16 pixels*/
     position: sticky; /*The bar, when scrolling will stay in a fixed position, i.e. it will not disappear*/
     top: 0; /*the element's top edge should be positioned at the very top of its containing element */
     z-index: 999; /* Stacking. The higher the number more on top the feature is, compared to others with lower z-indexes*/
     border-bottom: 1px solid rgba(204, 202, 202, 0.34);
 }
-
 .navbar__container {
     display: flex;
     justify-content: space-between; /*separates <a>, <div> and <ul>. The one that are in the container*/
@@ -28,7 +27,6 @@
     margin: 0 auto; /*the first(0) is top and bottom, the second (auto) is left and right*/
     padding: 0 50px;
 }
-
 #navbar__logo { /*the customisation of the logo*/
     background-color: #ff8177;
     background-image: linear-gradient(to top, #ff0844 0%, #ff9999 100%);
@@ -43,22 +41,15 @@
     text-decoration: none; /*Removes the underline that is in the <a> element (i.e. the underline in the links)*/
     font-size: 2rem;
 }
-
-/*.fa_gem{ The logo
-    margin-right: 0.5rem;
-}  TO DELETE */
-
 .navbar__menu {
     display: flex;
     align-items: center;
     list-style: none; /*removes the list configuration (i.e. bullet point) the elements were once in */
     text-align: center;
 }
-
 .navbar__item {
     height: 80px;
 }
-
 .navbar__links {
     color: #000;
     display: flex;
@@ -69,7 +60,6 @@
     text-decoration: none;
     padding: 0 1rem;
 }
-
 .navbar__links:hover { /*the effect when you hover on a menu item*/
     color: #ff8177;
     transition: all 0.3s ease; /*transition: [property] [duration] [timing-function] [delay]*/
@@ -92,7 +82,7 @@
         margin: 0;
         width: 100%;
         position: absolute;
-        right: -1000px;/*so that it is out of sight before we press the icon*/
+        top: -1000px;/*so that it is out of sight before we press the icon*/
         opacity: 0;/*it is not visible even if it was in sight*/
         transition: all 0.5s ease;
         height: 50vh;
@@ -100,14 +90,13 @@
     }
 
     .navbar__menu.active { /*JavaScript*/
-        background-color: #ffffff;
-        width: 100%;
-        right: 0;
+        background: rgba(243, 187, 200, 1); /*OR TO KEEP JUST IN WHITE*/
+        top: 100%;
         opacity: 1;/*so we can see it*/
         transition: all 0.5s ease;
         height: 50vh;/*i.e. 50% of the viewport height*/
         z-index: 99;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
 
     #navbar__logo{
