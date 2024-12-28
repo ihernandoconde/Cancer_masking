@@ -88,7 +88,6 @@
         height: 50vh;
         z-index: -1; /*so that we can press the icon(i.e. the icon is on top)*/
     }
-
     .navbar__menu.active { /*JavaScript*/
         background: rgba(243, 187, 200, 1); /*OR TO KEEP JUST IN WHITE*/
         top: 100%;
