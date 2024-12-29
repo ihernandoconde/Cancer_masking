@@ -213,6 +213,28 @@
     transition: all 0.3s ease;
     position: relative;
 }
+.main__button-upload a {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-decoration: none;
+}
+.main__button-upload:hover {
+    transform: scale(2);
+    transition: all 0.3s ease;
+}
+.main__button a {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-decoration: none;
+}
+.main__button a {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-decoration: none;
+}
 .main__button {
     display: none;
 }

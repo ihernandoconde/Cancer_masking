@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!--this is language = english -->
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Synapse systems: BI-RADS</title>
+    <link rel="stylesheet" href="Style.css">  <!--This links the style sheet to the HTML file-->
 </head>
-<body>
 
-</body>
-</html>
+<body>
+<!--Navigation bar-->
+<nav class="navbar">
+    <div class="navbar__container">
+        <a href="/" id="navbar__logo">Synapse systems</a> <!--This is the logo of the site-->
+        <div class="navbar__toggle" id="mobile-menu"> <!--It creates a class (general) and an id (specific to one element)-->
+            <span class="bar"></span> <!--The 3 horizontal lines used to access a menu-->
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu"> <!--Menu items. ul means "unordered list"-->
+            <li class="navbar__item">
+                <a href="index.html" class="navbar__links">Home</a> <!-- Hyperlinks (i.e. <a>) allow users to navigate from one web page to another, different sections of the same page, or to external resources -->
+            </li>
+            <li class="navbar__item">
+                <a href="About_us_page.html" class="navbar__links"> About us</a>
+            </li>
+            <li class="navbar__item">
+                <a href="Charities_page.html" class="navbar__links"> Charities </a>
+            </li>
+            <li class="navbar__item">
+                <a href="Tech_page.html" class="navbar__links"> Tech </a>
+            </li>
+            <!--<li class="navbar__btn">
+                <a href="/" class="button"> Button that can be pressed </a>
+            </li> TO BE DELETED -->
+        </ul>
+    </div>
+</nav>
