@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Synapse systems: BI-RADS</title>
+    <title>Synapse systems: UPLOAD </title>
     <link rel="stylesheet" href="Style.css">  <!--This links the style sheet to the HTML file-->
 </head>
 
@@ -19,16 +19,16 @@
         </div>
         <ul class="navbar__menu"> <!--Menu items. ul means "unordered list"-->
             <li class="navbar__item">
-                <a href="index.html" class="navbar__links">Home</a> <!-- Hyperlinks (i.e. <a>) allow users to navigate from one web page to another, different sections of the same page, or to external resources -->
+                <a href="/" class="navbar__links">Home</a> <!-- Hyperlinks (i.e. <a>) allow users to navigate from one web page to another, different sections of the same page, or to external resources -->
             </li>
             <li class="navbar__item">
-                <a href="About_us_page.html" class="navbar__links"> About us</a>
+                <a href="/" class="navbar__links"> About us</a>
             </li>
             <li class="navbar__item">
-                <a href="Charities_page.html" class="navbar__links"> Charities </a>
+                <a href="/" class="navbar__links"> Charities </a>
             </li>
             <li class="navbar__item">
-                <a href="Tech_page.html" class="navbar__links"> Tech </a>
+                <a href="/" class="navbar__links"> Tech </a>
             </li>
             <!--<li class="navbar__btn">
                 <a href="/" class="button"> Button that can be pressed </a>
@@ -37,7 +37,7 @@
     </div>
 </nav>
 
-<!--Hero section-->
+<!--Hero section
 <div class="main">
     <div class="main__container">
         <div class="main__content" >
@@ -51,24 +51,18 @@
             non-fat areas in the breast may be an indication of risk of breast
             cancer. Denser breast are more likely to develop cancer than less dense ones. </p>
 
-                <div class="main__img--container">
+                <div class="main__img&#45;&#45;container">
                     <img src="images/birad_image.png" alt="The 4 BIRADS categories for breast density" id="main__BIRADS_img"/>
                 </div>
             </div>
         </div>
 
         <div class="main__content">
-            <form>
-                <input type="file" name="upload_button" id="upload_button" hidden multiple accept="image/*" />    <!--button used for upload -->
-                <label for="upload_button" id="label" >Choose Two files </label>              <!--this label hides the standard button -->
-                <span id="file_chosen"> </span> <!--this replaces the file name hidden by the label -->
-                <button class="main__button" >Upload</button>           <!--this can be used to get the file for processing -->
-            </form>
-
+            <button class="main__button"> <a href="Uploading_page.html">Upload</a> </button>
             <h2>Find your BI-RADS</h2>
         </div>
     </div>
-</div>
+</div>-->
 
 <!--Footer Section-->
 <div class="footer__container">
@@ -90,7 +84,7 @@
 
     <script src="/eel.js"></script>
     <script src= "Script.js"></script>  <!--Connects the Javascript file to the HTML -->
-    <script src="../Main.py"></script>
+<!--    <script src="../Main.py"></script>-->
 
 </body>
 </html>
