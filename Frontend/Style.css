@@ -180,6 +180,12 @@
     font-weight: 200;
 }
 .main__content h2{
+    font-size: 1rem;
+    color: black;
+    font-weight:200;
+    margin-top: 1rem;
+}
+.main__content h3{
     font-size: 2rem;
     color: #ff6c8e;
     font-weight: 800;

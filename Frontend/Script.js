@@ -3,6 +3,7 @@ const menuLinks = document.querySelector('.navbar__menu');
 const upload_button=document.getElementById('upload_button');
 const file_chosen=document.getElementById('file_chosen');
 const button=document.querySelector('.main__button');
+const label2=document.getElementById('label2');
 
 menu.addEventListener('click', function(){
     menu.classList.toggle('is-active'); /*classList is an object that represents the list of classes of an element*/
@@ -13,8 +14,9 @@ let file_name = [];
 upload_button.addEventListener('change', function () { //check here that two files are uploaded
     file_name.push(upload_button.files[0].name);
     file_name.push(upload_button.files[1].name);
-    file_chosen.textContent = file_name.join(', ');
+    file_chosen.textContent = this.files[0].name + this.files[1].name;
     button.classList.toggle('active');
+    label2.classList.toggle('active');
 });
 
 let fileContent = [];
