@@ -9,24 +9,31 @@ menu.addEventListener('click', function(){
     menuLinks.classList.toggle('active');  /*add or removes active from the list of classes in menuLinks*/
     /*if .active is present then the menu links disappears */
 });
-
+let file_name = [];
 upload_button.addEventListener('change', function () { //check here that two files are uploaded
-    let file_name = []; //Make it so it is able to take one input at a time
     file_name.push(upload_button.files[0].name);
     file_name.push(upload_button.files[1].name);
     file_chosen.textContent = file_name.join(', ');
     button.classList.toggle('active');
 });
 
-function doSomething(){
-    let fileContent;
+let fileContent = [];
+
+button.addEventListener('click', function () {
     fileContent = [];
-    if (upload_button.files.length >= 2) {
-    fileContent.push(upload_button.files[0]);
-    fileContent.push(upload_button.files[1]);
+
+    if (upload_button.files.length === 2) {
+        fileContent.push(upload_button.files[0]);
+        fileContent.push(upload_button.files[1]);
+        window.location.href = "Uploading_page.html"; //redirects page
     } else {
-        alert("Please select at two files.");
+        alert("Please select two files.");
     }
+});
+
+eel.expose(get_files);
+function get_files(){
+    return fileContent;
 }
 
 /* eel.function_in_python(variable)
