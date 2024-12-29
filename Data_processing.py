@@ -4,7 +4,6 @@ from pydicom.pixel_data_handlers.util import convert_color_space
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 def load_file(path):
     #here or in the UI we should add a try catch to check if the file is actually dicom
     file=pydicom.dcmread(path)  #this reads the data
