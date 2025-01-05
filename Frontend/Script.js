@@ -12,11 +12,20 @@ menu.addEventListener('click', function(){
 });
 let file_name = [];
 upload_button.addEventListener('change', function () { //check here that two files are uploaded
-    file_name.push(upload_button.files[0].name);
-    file_name.push(upload_button.files[1].name);
-    file_chosen.textContent = this.files[0].name + this.files[1].name;
+    if (upload_button.files.length  ===1) {
+        file_name.push(upload_button.files[0].name);
+        file_chosen.textContent = this.files[0].name;
+        label2.classList.toggle('active');
+
+    }
+    if (upload_button.files.length  ===2) {
+        file_name.push(upload_button.files[0].name);
+        file_name.push(upload_button.files[1].name);
+        file_chosen.textContent = this.files[0].name+ this.files[1].name;
+        label2.classList.toggle('active');
+
+    }
     button.classList.toggle('active');
-    label2.classList.toggle('active');
 });
 
 let fileContent = [];
@@ -24,12 +33,20 @@ let fileContent = [];
 button.addEventListener('click', function () {
     fileContent = [];
 
-    if (upload_button.files.length === 2) {
+    if (upload_button.files.length  ===1) {
+        fileContent.push(upload_button.files[0]);
+        window.location.href = "Uploading_page.html"; //redirects page
+    }
+    if (upload_button.files.length  ===2) {
         fileContent.push(upload_button.files[0]);
         fileContent.push(upload_button.files[1]);
         window.location.href = "Uploading_page.html"; //redirects page
-    } else {
-        alert("Please select two files.");
+    }
+    if(upload_button.files.length <1) {
+        alert("Please select at least one file.");
+    }
+    if(upload_button.files.length >2) {
+        alert("Please select a maximum of two files.");
     }
 });
 
