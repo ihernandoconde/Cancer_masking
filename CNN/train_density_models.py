@@ -43,7 +43,7 @@ for i, row in df.iterrows():
     filename     = row.iloc[0]   # rwo 0: filename
     true_density = row.iloc[1]   # row 1: density value
 
-    # 计算 breast_area, dense_area
+    # calc breast_area, dense_area
     breast_path = os.path.join(BREAST_DIR, filename)
     dense_path  = os.path.join(DENSE_DIR,  filename)
 
