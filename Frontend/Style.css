@@ -145,6 +145,8 @@
 /* HERO SECTION */
 .main {
     background-color: #ffffff;
+    background-image: url("images/pink_gradient.jpg");
+    background-size: cover;
 }
 .main__container {
     display: grid;/*The items are placed in a grid*/
@@ -153,6 +155,19 @@
     justify-content: center;
     margin: 0 auto;
     height: 200vh;
+    padding: 0 50px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    grid-gap: 50px;
+}
+.main__container__about__us{
+    display: grid;/*The items are placed in a grid*/
+    grid-template-columns: 1fr 0.5fr; /*evenly split*/
+    align-items: center ;
+    justify-content: center;
+    margin: 0 auto;
+    height: 100vh;
     padding: 0 50px;
     z-index: 1;
     width: 100%;
