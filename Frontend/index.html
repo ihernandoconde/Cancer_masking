@@ -42,27 +42,66 @@
     <div class="main__container">
         <div class="main__content" >
 
-            <h1>What are BI-RADS?</h1>
-            <div class="main__text" id="introduction_grid">
+            <div class="main__text">
+                <h1>Breast Cancer</h1>
                 <p>
-                    Breast cancer is [this data], a common risk factor is breast density which is measured in a scale called BI-RADS,
-                    this may be either A, B, C, or D. This works because the proportion of fat to
-                    non-fat areas in the breast may be an indication of risk of breast
-                    cancer. Denser breast are more likely to develop cancer than less dense ones.
-                    Another risk factor is different density results between both breasts. </p>
+                    Breast cancer is the most frequently diagnosed cancer in women worldwide.
+                    It is estimated that 1 in 8 women will develop breast cancer during their
+                    lifetime. With early detection, survival rates exceeds 90% so regular
+                    screening is essential if possible. Because of healthcare access disparity,
+                    diagnostics remain a challenge in low-resource regions so using our software
+                    you can upload you screening results to understand your risk better.
 
-                <div class="main__img--container">
-                    <img src="images/birad_image.png" alt="The 4 BIRADS categories for breast density" id="main__BIRADS_img"/>
-                </div>
+                </p>
             </div>
+            <div></div>
+            <div class="main__text">
+                <h1>Risk Factors</h1>
+                <p>
+                    Breast density is a main risk factor for breast cancer development.
+                    Dense breast tissue consists of more fibrous tissue instead of fatty tissue
+                    and it makes it harder to identify abnormalities when screening. Higher
+                    breast density makes women 4 to 6 times more likely to develop breast cancer,
+                    and it hides tumours on imaging, delaying diagnosis.
+
+                    Another risk factor is asymmetry in breast density between both breasts, which
+                    occurs when results from both breast have a noticeable difference, this can
+                    be an early sign of developing malignancy.
+
+
+                </p>
+            </div>
+            <div></div>
+            <div class="main__text">
+                <h1>What are BI-RADS?</h1>
+                <p>
+                    The BI-RADS scale helps radiologists and doctors classify findings from breast
+                    imaging and identify risk levels for developing breast cancers. It ranges from 1 to 4,
+                    BI-RADS 1 meaning normal findings while BI-RADS 4 suggests abnormal results that might
+                    require a further testing. This systems includes breast density categories (A to D)
+                    which depend on density results, a risk factor of breast cancer. In this scale, A being
+                    lower density and D being highest, as seen below.
+
+                </p>
+            </div>
+            <div class="main__img--container">
+                <img src="images/birad_image.png" alt="The 4 BIRADS categories for breast density" id="main__BIRADS_img"/>
+            </div>
+            <div></div>
             <h1> Calculate your BI-RADS here</h1>
                 <div class="main__text" id="explanatory_grid">
-                    <p>By uploading the image of your mammograms, we can estimate the BI-RADS(Breast Imaging Reporting
-                        and Database System) score you may have in terms of breast density.
-                        As explained above, this may be either A, B, C, or D, but it only indicates
-                        possible risk as is not to be taken in a diagnostic capacity. We will also output the density
-                        for the main four areas for more localized analysis. If you want to check out the symmetry of
-                        results between both breasts, upload a second mammogram.</p>
+                    <p>We trained our software on public datasets to identify the BI-RAD category of
+                        breast density (either A, B, C or D), so that by uploading you mammogram you can
+                        check your possible risk. If desired, you can also upload two mammograms, one of
+                        each breast to check the results on both and identify possible asymmetry.
+                        For a more localized analysis, the density of the four main quadrants will also be outputted.
+
+                        Warning: our software has  been trained on public datasets and has a 90% accuracy
+                        rate, but it is not FDA approved and should not be taken as a professional opinion,
+                        always consult with your doctor. We do not save any images or resulting information.
+
+
+                    </p>
                 </div>
 
         </div>
