@@ -24,17 +24,20 @@ button.addEventListener('click', function () {
 
     if (upload_button.files.length === 2) {
         fileContent.push(upload_button.files[0]);
-        fileContent.push(upload_button.files[1]);
+        fileContent.push(upload_button.files[1])
         window.location.href = "Uploading_page.html"; //redirects page
+
+        eel.processing_image(fileContent) (function(processed_image_one, processed_image_two) { //callback function
+            // Set the processed image as the src of the image element
+            document.getElementById('breast_one').src = processed_image_one;
+            document.getElementById("breast_two").src = processed_image_two;
+        })
     } else {
         alert("Please select two files.");
     }
 });
 
-eel.expose(get_files);
-function get_files(){
-    return fileContent;
-}
+
 
 /* eel.function_in_python(variable)
 To define and expose function:
