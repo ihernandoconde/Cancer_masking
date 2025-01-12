@@ -9,9 +9,8 @@ eel.start('index.html')
 def processing_image (image_file_array):
     file_1, image_1 = load_file(image_file_array[0])
     file_2, image_2 = load_file(image_file_array[0])
-
-    rgb_image_1 = convert_rgb(file_1, image_1) ##I don't know it usage
-    rgb_image_2 = convert_rgb(file_2, image_2) ##I don't know it usage
+    rgb_image_1 = convert_rgb(file_1, image_1)
+    rgb_image_2 = convert_rgb(file_2, image_2)
 
     #This (above) to CNN
     #Reconstructed image from CNN
