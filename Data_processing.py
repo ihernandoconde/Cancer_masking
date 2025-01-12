@@ -1,7 +1,13 @@
+#This file defines two functions:
+#load_file reads a dicom file from the input path and extracts the pixel data into an array using pydicom
+#convert_rgb checks the pixel value type using pydicom and converts it to RGB using numpy
+
 import pydicom
 from pydicom.pixel_data_handlers.util import convert_color_space
+from pydicom.errors import InvalidDicomError
 import matplotlib.pyplot as plt
 import numpy as np
+
 
 def load_file(path):
     #here or in the UI we should add a try catch to check if the file is actually dicom
@@ -22,8 +28,8 @@ def convert_rgb(file,image):
         print('wtf')
     return(rgb_image)
 
-#path=r"C:\Users\ihern\Documents\Java_try\breast_masking\image1.dcm"
-#file, image=load_file(path)
-#rgb_image=convert_rgb(file, image)
-#plt.imshow(rgb_image)
-#plt.show
+try:
+    file, image = load_file(path)
+    print("DICOM file loaded successfully!")
+except Exception as e:
+    print(e)
