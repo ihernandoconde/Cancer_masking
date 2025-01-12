@@ -11,17 +11,34 @@ import numpy as np
 
 
 def load_file(path):
-    #here or in the UI we should add a try catch to check if the file is actually dicom
+    """
+    Function reads a file from the input path(return file), checks if file type is DICOM,
+    extracts the pixal data and inputs it into an array using pydicom(return image).
+    Raises ValueError if pixel data is missing
+    Raises TypeError if file is not DICOM
+    :param path:
+    :return file, image:
+    """
     try:
         file=pydicom.dcmread(path)  #this reads the data
         if 'PixelData' not in file:
-            raise ValueError('DICOM file is missing pixe data')
+            raise ValueError('DICOM file is missing pixel data')
         image= pixel_array(file)    #this converts pixel data into an array
         return(file, image)
     except InvalidDicomError:
         raise TypeError('The file uploaded is not a valid DICOM file')
 
 def convert_rgb(file,image):
+    """
+    Function uses file reading and image pixel array data to check pixel value
+    type and change it to RGB from MONOCHROME2 and YBR (the normal pixel value
+    types in DICOM files), it returns RGB array of pixel values (rgb_image).
+    Raises InvalidDicomError if photometric interpretation is not one of the described above
+    Raises AttributeError if photometric interpretation value is missing
+    :param file:
+    :param image:
+    :return rgb_image:
+    """
     try:
         #for monochrome images
         if file.PhotometricInterpretation=='MONOCHROME2':   #this checks the pixel type of the input
@@ -41,7 +58,7 @@ def convert_rgb(file,image):
     except AttributeError as e:
         raise AttributeError("Invalid DICOM file structure. Missing Photometric Interpretation attribute") from e
 
-path=r"C:\Users\ihern\Documents\Java_try\breast_masking\collage.png"
+path=r"C:\Users\ihern\Documents\Java_try\breast_masking\image1.dcm"
 #file, image=load_file(path)
 #rgb_image=convert_rgb(file, image)
 #plt.imshow(rgb_image)
