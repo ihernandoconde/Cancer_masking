@@ -2,6 +2,14 @@ from PIL import Image
 import numpy as np
 import cv2 as cv
 
+def correct_orientation (image):
+    #To ensure consistency of quadrant labelling, images are flipped so that the nipple is on the left hand side if not already
+    height, width = image.shape
+    right_side  = image[:, width//2:]
+    left_side = image[:, :width//2]
+    if np.sum(left_side) > np.sum(right_side):
+        image = cv.flip(image, 1) # flip the image vertically if the left side has more pixels than the right side
+    return image
 
 def background_clean(breast_mask, dense_mask):
     # This function 'cleans' the image so that there are no white bits/ artifacts outside the breast region.
@@ -26,10 +34,6 @@ def background_clean(breast_mask, dense_mask):
     masked_dense = cv.bitwise_and(
         dense, dense, mask=breast_region_mask
     )  # masking the dense image to region inside contour
-
-    cv.imshow("Dense Mask", masked_dense)  # Display the binary mask
-    cv.waitKey(0)
-    cv.destroyAllWindows()
 
     return breast_region_mask, masked_dense
 
@@ -106,6 +110,14 @@ def quadrant_densities(breast_mask, dense_mask):
     ]  # turns the numbers in percentages to decimal places
     return percentages
 
+def display_image(cropped_dense):
+    # display smaller image with correct aspect ratio
+    height, width = cropped_dense.shape
+    scale_factor = min(800 / height, 800 / width)
+    small_dense = cv.resize(cropped_dense, (int(width * scale_factor), int(height * scale_factor)))
+    cv.imshow("Dense mask", small_dense)
+    cv.waitKey(0)
+    cv.destroyAllWindows()
 
 if __name__ == "__main__":
     breast_mask_path = r"C:\Users\aizaa\OneDrive\Documents\Imperial College London\biomedical engineering\year 3\software engineering\project\Mammogram Density Assessment Dataset\main_dataset\main_dataset\train\breast_masks\00a6b0d56eb5136c1be2c3d624b04dad.jpg"
