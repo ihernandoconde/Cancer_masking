@@ -112,20 +112,6 @@ function get_files(){
     return fileContent;
 }
 
-/* eel.function_in_python(variable)
-To define and expose function:
-eel.expose(name_function)
-function name_function (variable) {}
- */
-
-/*
-/!*Function that takes an image as input*!/
-const button = document.querySelector('.main__button');
-const imageInput = document.querySelector('#imageInput')
-button.addEventListener("click", function() {
-    imageInput.click();
-    window.location.href = "Uploading_page.html";/!*put it after you are able to check the files are the one requested*!/
-})
 
 
 
