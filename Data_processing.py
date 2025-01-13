@@ -80,3 +80,6 @@ if __name__ == "__main__":
         print("DICOM file loaded successfully!")
     except Exception as e:
         print(e)
+
+
+

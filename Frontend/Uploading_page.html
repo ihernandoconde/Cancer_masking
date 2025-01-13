@@ -35,22 +35,25 @@
                 <!--<li class="navbar__btn">
                 <a href="/" class="button"> Button that can be pressed </a>
             </li> TO BE DELETED -->
-            </ul>
-        </div>
-    </nav>
 
-    <!--Hero section -->
-    <div class="main">
-        <h1> Breast-density image</h1>
-        <div class="main__container">
-            <div class="main__content">
-                <img id="breast_one" src="" alt=" Processing image...">
-            </div>
-            <div class="main__content">
-                <img id="breast_two" src="" alt=" Processing image...">
-            </div>
+        </ul>
+    </div>
+</nav>
+
+<!--Hero section -->
+<div class="main">
+    <h1> Breast-density image</h1>
+    <div class="main__container">
+        <div class="main__content">
+            <img id="breast_one" src = "" alt = " Processing image...">
+            <p id="birads_result_one"> sadjkh sda kfhak kfuahs</p>
+
         </div>
-        <p> </p>
+        <div class="main__content">
+            <img id="breast_two" src = "" alt = " Processing image...">
+            <p id="birads_result_two"> sjaksjd </p>
+        </div>
+    </div>
 
     </div>
 
@@ -73,8 +76,30 @@
     </div>
 
     <script src="/eel.js"></script>
-    <script src="Script.js"></script> <!--Connects the Javascript file to the HTML -->
-    <!--    <script src="../Main.py"></script>-->
+
+    <script src= "Script.js"></script>  <!--Connects the Javascript file to the HTML -->
+    <script src="../Main.py"></script>
+    <script >
+         // Function to get the BI-RADS explanation based on the density value
+        function getBiradsInfo(density) {
+            // Call the Python function density_explanation and update the content of the paragraph
+            eel.density_explanation(density)(function(paragraph) {
+                // Update the paragraph with the result from Python
+                document.getElementById("birads_result_one").textContent = paragraph;
+            });
+        }
+
+        // This will run when the page is loaded
+        window.onload = function() {
+            // Example density value
+            var density = 50;  // Change this value to test different explanations
+            getBiradsInfo(density);}
+
+        {#function update_birads_info(x) {#}
+        {##}
+        {#    document.getElementById("birads_result_one").textContent = paragraph;#}
+        {#//update_birads_info(paragraph);#}
+    </script>
 
 </body>
 
