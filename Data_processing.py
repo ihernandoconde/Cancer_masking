@@ -13,7 +13,7 @@ import numpy as np
 def load_file(path):
     """
     Function reads a file from the input path(return file), checks if file type is DICOM,
-    extracts the pixal data and inputs it into an array using pydicom(return image).
+    extracts the pixel data and inputs it into an array using pydicom(return image).
     Raises ValueError if pixel data is missing
     Raises TypeError if file is not DICOM
     :param path:
