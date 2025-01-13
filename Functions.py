@@ -1,4 +1,5 @@
 import pydicom
+import eel
 from pydicom import pixel_array
 from pydicom.pixel_data_handlers.util import convert_color_space
 import numpy as np
@@ -24,3 +25,5 @@ def convert_rgb(file,image):
         rgb_image=None
         print('wtf')
     return rgb_image
+
+
