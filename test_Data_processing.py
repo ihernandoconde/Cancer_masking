@@ -33,10 +33,6 @@ class test_data_processing(unittest.TestCase):
             with self.assertRaises(ValueError):
                 load_file(mock_file)
 
-        
-    #def test_convert_monochrome(self):
-
-    #def test_convert_ybr(self):
 
     def test_convert_unsupported_type(self):
         #create file with different photometric interpretation
