@@ -1,11 +1,17 @@
 import numpy as np
 import cv2 as cv
+from pathlib import Path
+
+
 """
 Purpose: to split the breast into 4 regions (quadrants) and find the individual densities of each region. Identifying 
 which regions are more dense can help inform medical professionals on which regions are more likely to contain cancer, 
 if it is present. 
 """
-def correct_orientation (image):
+
+
+
+def correct_orientation(image):
     """
     Images of the right breast can stay as they are, but images of the left breast need to flipped vertically to ensure
     that the labelling of the quadrants is consistent between the two.
@@ -16,13 +22,16 @@ def correct_orientation (image):
         image = cv.imread(image, cv.IMREAD_GRAYSCALE)
 
     height, width = image.shape
-    right_side  = image[:, width//2:]
-    left_side = image[:, :width//2]
+    right_side = image[:, width // 2 :]
+    left_side = image[:, : width // 2]
     if np.sum(left_side) > np.sum(right_side):
-        image = cv.flip(image, 1) # flip the image vertically if the left side has more pixels than the right side
+        image = cv.flip(
+            image, 1
+        )  # flip the image vertically if the left side has more pixels than the right side
     return image
 
-def background_mask (breast_mask, dense_mask):
+
+def background_mask(breast_mask, dense_mask):
     """
     The breast region is outlined and this outline is applied to the dense mask to isolate the region of interest,
     so that when the image is split into quadrants, the background of the image is not taken into account.
@@ -42,6 +51,7 @@ def background_mask (breast_mask, dense_mask):
     cv.drawContours(breast_region_mask, [largest_contour], -1, 255, thickness=cv.FILLED) #drawing  largest contour on mask
     masked_dense = cv.bitwise_and(dense, dense, mask=breast_region_mask) #masking the dense image to region inside contour
 
+
     return breast_region_mask, masked_dense
 
 def quadrant_densities(breast_mask, dense_mask):
@@ -54,14 +64,17 @@ def quadrant_densities(breast_mask, dense_mask):
     """
     breast_region_mask, masked_dense = background_mask(breast_mask, dense_mask)
 
+
     #find box of breast region:
     y, x = np.where(breast_region_mask>0)
+
     miny, maxy = y.min(), y.max()
     min_x, max_x = x.min(), x.max()
 
     #crop to the bounding region
     cropped_breast = breast_region_mask[miny:maxy, min_x:max_x]
     cropped_dense = masked_dense[miny:maxy, min_x:max_x]
+
 
     height, width = cropped_breast.shape #dense.shape return dimensions of the array
 
@@ -79,6 +92,7 @@ def quadrant_densities(breast_mask, dense_mask):
 
         breastpixelcount = np.sum(breastquadrant>0) #total area of breast
         densepixelcount = np.sum(densequadrant>128) #total dense area of breast
+
 
         if breastpixelcount ==0:
             density = 0

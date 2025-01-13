@@ -14,18 +14,28 @@ import joblib
 from catboost import CatBoostRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
+from pathlib import Path
 
 import segmentation_models_multi_tasking as smp
 
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# pre-processing n predicting
+preprocess = transforms.Compose(
+    [
+        transforms.Resize((256, 256)),  # align with training's size
+        transforms.ToTensor(),
+    ]
+)
+
 
 def load_image(image_path):
-    img = Image.open(image_path).convert("RGB")
-    img_tensor = preprocess(img).unsqueeze(0)  # [1,3,256,256]
-    return img_tensor.to(DEVICE)
+    pil_img = Image.fromarray(image_path)
+    img_tensor = preprocess(pil_img).unsqueeze(0)  # [1,3,256,256]
+    img_tensor = img_tensor.to("cpu")
+    return img_tensor
 
 
-def predict_masks(image_path, model):
-    img_tensor = load_image(image_path)
+def predict_masks(img_tensor, model):
     with torch.no_grad():
         output = model(img_tensor)
     if not isinstance(output, tuple):
@@ -42,12 +52,12 @@ def save_results(image_path, breast_pred, dense_pred, save_dir):
     """
     saving original img and predicted result
     """
-    img = Image.open(image_path).convert("RGB")
+    pil_img = Image.fromarray(image_path)
     os.makedirs(save_dir, exist_ok=True)
 
     # 1) original img
     original_save_path = os.path.join(save_dir, "original_image.png")
-    img.save(original_save_path)
+    pil_img.save(original_save_path)
     print(f"Original image saved => {original_save_path}")
 
     # 2) breast mask
@@ -102,7 +112,7 @@ def compute_density_ensemble(
 
 if __name__ == "__main__":
     # use GPU
-    DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    DEVICE = torch.device("cpu")
 
     # CNN model weights
     model_path = r"C:\Users\layan\OneDrive\Desktop\Breast cancer project\cancer_masking\result_epoch{epoch + 1}.pth"
@@ -123,8 +133,8 @@ if __name__ == "__main__":
     model = smp.Unet(
         encoder_name="resnet50", encoder_weights=None, classes=1, activation="sigmoid"
     )
-    model = torch.load(model_path, map_location=DEVICE)
-    model = model.to(DEVICE)
+    model = torch.load(model_path, map_location="cpu")
+    model = model.to("cpu")
     model.eval()
     print("Segmentation model loaded.")
 

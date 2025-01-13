@@ -1,5 +1,6 @@
 const menu = document.querySelector('#mobile-menu'); /*selects as a CSS selector, it returns the first item*/
 const menuLinks = document.querySelector('.navbar__menu');
+
 const upload_button=document.getElementById('upload_button');
 const file_chosen=document.getElementById('file_chosen');
 const button=document.querySelector('.main__button');
@@ -17,18 +18,21 @@ menu.addEventListener('click', function(){
 /*The upload button used to send collect the files uploaded by the user for the processing.
 It displays the name of the files selected */
 let file_name = [];
+
 upload_button.addEventListener('change', function () { //when button is used
     if (upload_button.files.length  ===1) {
         file_name.push(upload_button.files[0].name);    //push file name onto list of files
         file_chosen.textContent = this.files[0].name;   //change the file_chosen text to display the chosen file's name
         label2.classList.toggle('active');
     }
+
     if (upload_button.files.length  ===2) {
         file_name.push(upload_button.files[0].name);    //push file names onto list of files
         file_name.push(upload_button.files[1].name);
         file_chosen.textContent = this.files[0].name+ this.files[1].name;        //change the file_chosen text to display the chosen files names
         label2.classList.toggle('active');
     }
+
     button.classList.toggle('active');
 });
 
@@ -77,12 +81,14 @@ where their category is revealed.*/
  */
 let paragraph_content = " Working";
 let fileContent = [];
+paragraph = "<p> This is working</p>"
 
 button.addEventListener('click', function () {
     fileContent = []; //To clear previous elements that may have been selected
 
-    if (upload_button.files.length  ===1) {
+    if (upload_button.files.length === 1) {
         fileContent.push(upload_button.files[0]);
+
         //birads_result_one.innerText = "It is working well";
         window.location.href = "Uploading_page.html";            //redirects page
         eel.processing_image(fileContent) (function(processed_image_one, processed_image_two, density_one, density_two) { //callback function
@@ -117,7 +123,7 @@ button.addEventListener('click', function () {
 });
 
 eel.expose(get_files);
-function get_files(){
+function get_files() {
     return fileContent;
 }
 
