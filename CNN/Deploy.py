@@ -67,7 +67,7 @@ def save_results(img_path, breast_pred, dense_pred, save_directory):
     """
     Save original img and predicted results
     """
-    pil_img = Image.fromarray(image_path)
+    pil_img = Image.fromarray(img_path)
     os.makedirs(save_directory, exist_ok=True)
 
     # load original
@@ -229,3 +229,4 @@ if __name__ == "__main__":
             print(f"RuntimeError: {e}")
     except Exception as e:
         print(f"Unexpected error: {e}")
+
