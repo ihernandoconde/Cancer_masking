@@ -64,7 +64,7 @@ def processing_image(
         )
         img_tensor = load_image(rgb_image)
         breast_pred, dense_pred = predict_masks(img_tensor, model)
-        breast_path, dense_path, dense_img = save_results(
+        breast_path, dense_path = save_results(
             rgb_image, breast_pred, dense_pred, save_dir
         )
 
@@ -84,19 +84,29 @@ def processing_image(
         )
         q_densities = quadrant_densities(breast_path, dense_path)
 
-        Breast_density = Breast_density.append(final_density)
-        Quad_densities = Quad_densities.append(q_densities)
+        Breast_density.append(final_density)
+        Quad_densities.append(q_densities)
 
-        if len(uploaded_files) == 2:
-            breast_asymmetry = general_asymmetry_check(Breast_density[0], Breast_density[1])
-            quadrant_asymmetry = quadrant_asymmetry_check(Quad_densities[0],Quad_densities[1])
-        else:
-            breast_asymmetry = "na"
-            quadrant_asymmetry = "na"
-    
+    if len(uploaded_files) == 2:
+        breast_asymmetry = general_asymmetry_check(Breast_density[0], Breast_density[1])
+        quadrant_asymmetry = quadrant_asymmetry_check(
+            Quad_densities[0], Quad_densities[1]
+        )
+    else:
+        breast_asymmetry = "na"
+        quadrant_asymmetry = "na"
+
+    return (
+        Breast_density,
+        Quad_densities,
+        breast_asymmetry,
+        quadrant_asymmetry,
+    )
 
 
-    return Breast_density, Quad_densities, breast_asymmetry, quadrant_asymmetry
+# @eel.expose and then you define the function
+# To call: eel.expose(function_in_java)
+
 
 
 # @eel.expose and then you define the function
