@@ -15,16 +15,16 @@ menu.addEventListener('click', function(){
 /*The upload button used to send collect the files uploaded by the user for the processing.
 It displays the name of the files selected */
 let file_name = [];
-upload_button.addEventListener('change', function () { //check here that two files are uploaded
+upload_button.addEventListener('change', function () { //when button is used
     if (upload_button.files.length  ===1) {
-        file_name.push(upload_button.files[0].name);
-        file_chosen.textContent = this.files[0].name;
+        file_name.push(upload_button.files[0].name);    //push file name onto list of files
+        file_chosen.textContent = this.files[0].name;   //change the file_chosen text to display the chosen file's name
         label2.classList.toggle('active');
     }
     if (upload_button.files.length  ===2) {
-        file_name.push(upload_button.files[0].name);
+        file_name.push(upload_button.files[0].name);    //push file names onto list of files
         file_name.push(upload_button.files[1].name);
-        file_chosen.textContent = this.files[0].name+ this.files[1].name;
+        file_chosen.textContent = this.files[0].name+ this.files[1].name;        //change the file_chosen text to display the chosen files names
         label2.classList.toggle('active');
     }
     button.classList.toggle('active');
@@ -77,7 +77,7 @@ button.addEventListener('click', function () {
 
     if (upload_button.files.length  ===1) {
         fileContent.push(upload_button.files[0]);
-        window.location.href = "Uploading_page.html";//redirects page
+        window.location.href = "Uploading_page.html";            //redirects page
 
         eel.processing_image(fileContent) (function(processed_image_one, processed_image_two, density_one, density_two) { //callback function
             document.getElementById('breast_one').src = processed_image_one; // Sets the processed image as the source of the image element
