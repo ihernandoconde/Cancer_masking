@@ -5,3 +5,4 @@ In order for the code to be run, some elements have to be in the directory, that
 - A folder named "Deepdensity". It will also be sent
 
 The code that should be run in main.py
+The folder that will be sent will be shared via Outlook to m.holloway@imperial.ac.uk
