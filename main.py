@@ -13,9 +13,6 @@ from Asymmetry_check import general_asymmetry_check, quadrant_asymmetry_check
 from Quadrant_densities import quadrant_densities
 
 
-eel.init("Frontend")  # initialising our directory
-eel.start("index.html", mode="default")
-
 #Function for integration
 @eel.expose
 def processing_image(uploaded_files):  # uploaded_files will be considered a list since we can have 1 or 2 files
@@ -111,12 +108,5 @@ def processing_image(uploaded_files):  # uploaded_files will be considered a lis
         quadrant_asymmetry,
     )
 
-
-# @eel.expose and then you define the function
-# To call: eel.expose(function_in_java)
-
-
-
-# @eel.expose and then you define the function
-# To call: eel.expose(function_in_java)
-
+eel.init("Frontend")  # initialising our directory
+eel.start("index.html", mode="default")
