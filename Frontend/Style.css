@@ -147,6 +147,7 @@
     background-color: #ffffff;
     background-image: url("images/pink_gradient.jpg");
     background-size: cover;
+    position: relative;
 }
 .main__container {
     display: grid;/*The items are placed in a grid*/
@@ -159,7 +160,6 @@
     z-index: 1;
     width: 100%;
     max-width: 1300px;
-    grid-gap: 50px;
 }
 .main__container__about__us{
     display: grid;/*The items are placed in a grid*/
@@ -180,7 +180,7 @@
      align-items: center;
      justify-content: center;
      text-align: left;
-     margin: 20px 35px;
+     margin: 20px 55px;
 }
 #explanatory_grid {
     display: grid;
@@ -218,17 +218,17 @@
 .main__text p{
     margin-top: 14px;
     margin-bottom: 25px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #000;
-    line-height: 1.5; /*interline spacing*/
+    line-height: 1.7; /*interline spacing*/
     font-weight: 100;/*Thickness of the font*/
-    text-align: left;/*overwrites the center alignment in .main__content*/
+    text-align: justify;/*overwrites the center alignment in .main__content*/
 }
-.file_chosen {
-    font-size: 1rem;
+#file_chosen {
+    font-size: 0.9rem;
     color: black;
     font-weight:200;
-    margin-top: 5rem;
+    margin-top: 0.5rem;
 }
 .main__img--container {
     text-align: center;
@@ -240,12 +240,12 @@
 #label {
     margin-top: 1rem;
     background-color: #ff6c8e;
-    padding: 0.3rem;
+    padding: 0.5rem;
     cursor: pointer;
     border-radius: 20px;
     border: none;
     color: #fbfafa;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
@@ -292,49 +292,16 @@
     display: inline-block;
 }
 /* Mobile phone*/
-@media screen and (max-width: 1000px) {
-    .main__container {
-        grid-template-columns: auto;
-        align-items: center ;
-        align-content: center;
-        width: 100%;
-        margin: 0 auto;
-        height: 150vh;
-        z-index: 1;
-    }
-
-    #explanatory_grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center ;
-        width: 100%;
-        height: 90vh;
-        position: relative;
-    }
-    #introduction_grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center ;
-        width: 100%;
-        height: 90vh;
-        position: relative;
-    }
-
+@media screen and (max-width: 700px) {
     .main__content h1{
-        font-size: 2rem;
-        color: #ff6c8e;
-        margin-top: 22rem;
+        font-size: 1.7rem;
     }
     .main__content h2{
-        font-size: 1.5rem;
-        color: #ff6c8e;
-        font-weight: 800;
-        margin: 1.5rem auto;
+        font-size: 1.3rem;
     }
     .main__text p{
-        font-size: 1.1rem;
-        color: #000;
-        line-height: 1.4rem;
+        font-size: 1rem;
+        line-height: 1.35rem;
     }
     .main__img--container {
         max-width: 480px;
@@ -348,25 +315,16 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        position: relative;
     }
 }
 
-@media screen and (max-width: 700px) {
-
-    #explanatory_grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: center ;
-        width: 100%;
-        height: 90vh;
-        margin: 1rem auto;
-    }
-}
 
 /*Footer Section*/
 .footer__container {
     background-color: rgba(243, 187, 200, 0.89);
-    margin-top: 42rem;
+    position: sticky;
+    margin-top: 75rem;
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
@@ -383,7 +341,7 @@
     display: flex;
     align-items: start;
     justify-content: left;
-    margin-left:-3rem;
+    margin-left:20px;
 }
 .footer__link--item{
     display: flex;
@@ -407,7 +365,7 @@
     transition: all 0.3s ease;
 }
 
-@media screen and (max-width:780px) {
+@media screen and (max-width:700px) {
     .footer__container {
         background-color: rgba(243, 187, 200, 0.89);
         margin-top: 22rem;
