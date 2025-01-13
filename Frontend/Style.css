@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Times New Roman', sans-serif;
+    font-family: 'Georgia', sans-serif;
 }
 /* dot is for classes and the hashtag is for id*/
 .navbar {
@@ -150,7 +150,7 @@
 }
 .main__container {
     display: grid;/*The items are placed in a grid*/
-    grid-template-columns: 1fr 0.5fr; /*evenly split*/
+    grid-template-columns: 1fr; /*evenly split*/
     align-items: center ;
     justify-content: center;
     margin: 0 auto;
@@ -179,7 +179,8 @@
      flex-direction: column;
      align-items: center;
      justify-content: center;
-    text-align: center;
+     text-align: left;
+     margin: 20px 35px;
 }
 #explanatory_grid {
     display: grid;
@@ -200,6 +201,7 @@
     font-size: 2.5rem;
     color: #ff6c8e;
     font-weight: 200;
+    margin: 2rem auto;
 }
 .main__content h2{
     font-size: 1rem;
@@ -211,14 +213,15 @@
     font-size: 2rem;
     color: #ff6c8e;
     font-weight: 800;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 .main__text p{
-    margin-top: 1rem;
-    font-size: 1.2rem;
+    margin-top: 14px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
     color: #000;
     line-height: 1.5; /*interline spacing*/
-    font-weight: 400;/*Thickness of the font*/
+    font-weight: 100;/*Thickness of the font*/
     text-align: left;/*overwrites the center alignment in .main__content*/
 }
 .file_chosen {
@@ -363,6 +366,7 @@
 /*Footer Section*/
 .footer__container {
     background-color: rgba(243, 187, 200, 0.89);
+    margin-top: 42rem;
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
