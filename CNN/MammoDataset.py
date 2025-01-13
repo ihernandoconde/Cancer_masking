@@ -22,7 +22,7 @@ import torch
 import torch.optim as optim
 import torch.nn as nn
 from torch.utils.data import DataLoader
-import Deepdensity.scr.segmentation_models_multi_tasking as smp
+import segmentation_models_multi_tasking as smp
 import matplotlib.pyplot as plt
 from catboost import CatBoostRegressor
 from natsort import natsorted

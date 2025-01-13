@@ -14,7 +14,7 @@ sys.path.append(r"D:\Users\27187\anaconda3\envs\breast_mask\Lib\site-packages\sp
 
 from torch.utils.data import DataLoader
 from MammoDataset import MammoDataset  # data load
-import Deepdensity.scr.segmentation_models_multi_tasking as smp
+import segmentation_models_multi_tasking as smp
 from natsort import natsorted
 import torch.nn as nn
 from sklearn.model_selection import train_test_split
