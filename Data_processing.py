@@ -9,19 +9,21 @@ from pydicom.errors import InvalidDicomError
 from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
+from io import BytesIO
 
-
-def load_file(path):
+def load_file(file_input):
     """
     Function reads a file from the input path(return file), checks if file type is DICOM,
     extracts the pixel data and inputs it into an array using pydicom(return image).
     Raises ValueError if pixel data is missing
     Raises TypeError if file is not DICOM
-    :param path:
+    :param file_input:
     :return file, image:
     """
     try:
-        file = pydicom.dcmread(path)  # this reads the data
+        file_content = file_input.read()
+        file_content = BytesIO(file_content)
+        file = pydicom.dcmread(file_content)  # this reads the data
         if not hasattr(file, "PixelData") or not file.PixelData:
             raise ValueError("DICOM file is missing pixel data")
         image = file.pixel_array  # this converts pixel data into an array
@@ -81,8 +83,3 @@ if __name__ == "__main__":
     except Exception as e:
         print(e)
 
-try:
-    file, image = load_file(path)
-    print("DICOM file loaded successfully!")
-except Exception as e:
-    print(e)
