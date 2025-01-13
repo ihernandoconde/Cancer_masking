@@ -9,14 +9,14 @@ import Deepdensity
 import segmentation_models_multi_tasking as smp
 from Data_processing import load_file, convert_rgb
 from CNN.Deploy import load_image, predict_masks, save_results, compute_density_ensemble
-from Quadrant_densities import background_clean, quadrant_densities
+from Quadrant_densities import quadrant_densities
 
 
-# eel.init("Frontend")  # initialising our directory
-# eel.start("index.html", mode="default")
+eel.init("Frontend")  # initialising our directory
+eel.start("index.html", mode="default")
 
 
-# @eel.expose
+@eel.expose
 def processing_image(
     uploaded_files,
 ):  # uploaded_files will be considered a list since we can have 1 or 2 files
@@ -79,15 +79,10 @@ def processing_image(
             threshold=128,
         )
 
-        quadrant_densities = quadrant_densities(breast_path, dense_path)
-        result = (
-            f"Breast density: {final_density}, Quadrant densities: {quadrant_densities}"
-        )
+        q_densities = quadrant_densities(breast_path, dense_path)
+        result = f"Breast density: {final_density}%, Quadrant densities: {q_densities}%"
 
     return result
-
-
-result = processing_image([Path("dicom.dcm")])
 
 
 # @eel.expose and then you define the function

@@ -1,11 +1,24 @@
-from PIL import Image
 import numpy as np
 import cv2 as cv
 from pathlib import Path
 
+"""
+Purpose: to split the breast into 4 regions (quadrants) and find the individual densities of each region. Identifying 
+which regions are more dense can help inform medical professionals on which regions are more likely to contain cancer, 
+if it is present. 
+"""
+
 
 def correct_orientation(image):
-    # To ensure consistency of quadrant labelling, images are flipped so that the nipple is on the left hand side if not already
+    """
+    Images of the right breast can stay as they are, but images of the left breast need to flipped vertically to ensure
+    that the labelling of the quadrants is consistent between the two.
+    :param image (of breast mask or density mask)
+    t:return: an image that is flipped (if necessary) so that the nipple is on the left hand side
+    """
+    if isinstance(image, str):
+        image = cv.imread(image, cv.IMREAD_GRAYSCALE)
+
     height, width = image.shape
     right_side = image[:, width // 2 :]
     left_side = image[:, : width // 2]
@@ -16,23 +29,27 @@ def correct_orientation(image):
     return image
 
 
-def background_clean(breast_mask, dense_mask):
-    # This function 'cleans' the image so that there are no white bits/ artifacts outside the breast region.
-    # This is useful so that when the image is cropped in the next function, it isnt affected by white pixels that are not in the breast region
+def background_mask(breast_mask, dense_mask):
+    """
+    The breast region is outlined and this outline is applied to the dense mask to isolate the region of interest,
+    so that when the image is split into quadrants, the background of the image is not taken into account.
+    :param breast_mask: outlines the breast region
+    :param dense_mask: shows the dense regions in the breast
+    :return: breast region mask and the dense image (with the mask applied)
+    """
     breast = cv.imread(breast_mask, cv.IMREAD_GRAYSCALE)  # load image in greyscale
     dense = cv.imread(dense_mask, cv.IMREAD_GRAYSCALE)
+    breast = correct_orientation(breast)
+    dense = correct_orientation(dense)
     _, breast_binary_mask = cv.threshold(
         breast, 128, 255, cv.THRESH_BINARY
     )  # converts greyscale mask into binary mask
     # pixels with intensity > 128 are set to 255 (white). intensity <128 set to 0 (black)
     contours, _ = cv.findContours(
         breast_binary_mask, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE
-    )  # contours of breast mask
-    # finds boundaries of all white regions in the breast_binary_mask
+    )  # finds boundaries of all white regions in the breast_binary_mask
     largest_contour = max(contours, key=cv.contourArea)  # contour with largest area
-    breast_region_mask = np.zeros_like(
-        breast_binary_mask
-    )  # empty binary mask with same dimensions as breast_binary_mask
+    breast_region_mask = np.zeros_like(breast_binary_mask)  # empty binary mask
     cv.drawContours(
         breast_region_mask, [largest_contour], -1, 255, thickness=cv.FILLED
     )  # drawing  largest contour on mask
@@ -44,8 +61,14 @@ def background_clean(breast_mask, dense_mask):
 
 
 def quadrant_densities(breast_mask, dense_mask):
-    # remove the background to get the ROI
-    breast_region_mask, masked_dense = background_clean(breast_mask, dense_mask)
+    """
+    To calculate the density of each quadrant, the breast region is split into four regions (quadrants), and the density
+    of each quadrant is calculated.
+    :param breast_mask: outlines the breast region
+    :param dense_mask: shows the dense regions of the breast
+    :return: density percentages for each quadrant of the breast
+    """
+    breast_region_mask, masked_dense = background_mask(breast_mask, dense_mask)
 
     # find box of breast region:
     y, x = np.where(breast_region_mask > 0)
@@ -56,40 +79,29 @@ def quadrant_densities(breast_mask, dense_mask):
     cropped_breast = breast_region_mask[miny:maxy, min_x:max_x]
     cropped_dense = masked_dense[miny:maxy, min_x:max_x]
 
-    # breast = cv.bitwise_and(cropped_breast, cropped_breast, mask = resized_mask)
-    # dense = cv.bitwise_and(cropped_dense, cropped_dense, mask = resized_mask)
-
-    small_breast = cv.resize(cropped_breast, (256, 256))
-    cv.imshow("Cropped breast", small_breast)  # Display the binary mask
-    cv.waitKey(0)
-    cv.destroyAllWindows()
-    small_dense = cv.resize(cropped_dense, (256, 256))
-    cv.imshow("Cropped dense", small_dense)  # Display the binary mask
-    cv.waitKey(0)
-    cv.destroyAllWindows()
-
     height, width = cropped_breast.shape  # dense.shape return dimensions of the array
+
     quadrants = [  # dividing image into 4 quadrants
         (
             0,
             height // 2,
             width // 2,
             width,
-        ),  # top right (rows from top to middle, columns from middle to right edge)
-        (0, height // 2, 0, width // 2),  # top left
-        (height // 2, height, width // 2, width),  # bottom right
-        (height // 2, height, 0, width // 2),  # bottom left
+        ),  # (rows from top to middle, columns from middle to right edge)
+        (0, height // 2, 0, width // 2),
+        (height // 2, height, width // 2, width),
+        (height // 2, height, 0, width // 2),
     ]
 
     quadrant_densities = []
     for y_start, y_end, x_start, x_end in quadrants:  # for each of the 4 quadrants
         breastquadrant = cropped_breast[
             y_start:y_end, x_start:x_end
-        ]  # slices the image array to get the qudrant portion
+        ]  # slices the image array to get the quadrant portion
         densequadrant = cropped_dense[y_start:y_end, x_start:x_end]
 
         breastpixelcount = np.sum(breastquadrant > 0)  # total area of breast
-        densepixelcount = np.sum(densequadrant > 128)  # total dense area of breat
+        densepixelcount = np.sum(densequadrant > 128)  # total dense area of breast
 
         if breastpixelcount == 0:
             density = 0
@@ -97,39 +109,4 @@ def quadrant_densities(breast_mask, dense_mask):
             density = (densepixelcount / breastpixelcount) * 100
         quadrant_densities.append(density)
 
-    # display image with correct aspect ratio (copied from chatgpt)
-    height, width = cropped_breast.shape
-    scale_factor = min(
-        800 / height, 800 / width
-    )  # Choose the smaller scale to preserve aspect ratio
-    resized_dense = cv.resize(
-        cropped_dense, (int(width * scale_factor), int(height * scale_factor))
-    )
-    # Display the resized image
-    cv.imshow("Breast with Quadrants", resized_dense)
-    cv.waitKey(0)
-    cv.destroyAllWindows()
-
-    percentages = [
-        f"{density:.2f}%" for density in quadrant_densities
-    ]  # turns the numbers in percentages to decimal places
-    return percentages
-
-
-def display_image(cropped_dense):
-    # display smaller image with correct aspect ratio
-    height, width = cropped_dense.shape
-    scale_factor = min(800 / height, 800 / width)
-    small_dense = cv.resize(
-        cropped_dense, (int(width * scale_factor), int(height * scale_factor))
-    )
-    cv.imshow("Dense mask", small_dense)
-    cv.waitKey(0)
-    cv.destroyAllWindows()
-
-
-if __name__ == "__main__":
-    breast_mask_path = r"C:\Users\aizaa\OneDrive\Documents\Imperial College London\biomedical engineering\year 3\software engineering\project\Mammogram Density Assessment Dataset\main_dataset\main_dataset\train\breast_masks\00a6b0d56eb5136c1be2c3d624b04dad.jpg"
-    dense_mask_path = r"C:\Users\aizaa\OneDrive\Documents\Imperial College London\biomedical engineering\year 3\software engineering\project\Mammogram Density Assessment Dataset\main_dataset\main_dataset\train\dense_masks\00a6b0d56eb5136c1be2c3d624b04dad.jpg"
-    breastdensities = quadrant_densities(breast_mask_path, dense_mask_path)
-    print(f"Quadrant densities: {breastdensities}")
+    return quadrant_densities
