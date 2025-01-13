@@ -5,25 +5,28 @@ from PIL import Image
 from pathlib import Path
 import joblib
 import numpy as np
+import Deepdensity
 import segmentation_models_multi_tasking as smp
 from Data_processing import load_file, convert_rgb
 from CNN.Deploy import load_image, predict_masks, save_results, compute_density_ensemble
-from qudrantdensities import background_clean, quadrant_densities
+from Asymmetry_check import general_asymmetry_check, quadrant_asymmetry_check
+from Quadrant_densities import quadrant_densities
+
 
 eel.init("Frontend")  # initialising our directory
-eel.start("index.html")
+eel.start("index.html", mode="default")
 
 
 @eel.expose
 def processing_image(
     uploaded_files,
 ):  # uploaded_files will be considered a list since we can have 1 or 2 files
+    Breast_density = []
+    Quad_densities = []
+
     for uploaded_file in uploaded_files:
         file, image = load_file(uploaded_file)
         rgb_image = convert_rgb(file, image)
-
-        # use GPU
-        DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         # CNN model weights
         model_path = Path(r"artifacts/model.pth")
@@ -44,9 +47,13 @@ def processing_image(
             classes=1,
             activation="sigmoid",
         )
-        model = torch.load(model_path, map_location=DEVICE)
-        model = model.to(DEVICE)
+        model = torch.load(model_path, map_location=torch.device("cpu"))
+        # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        # model = model.to(device)
         model.eval()
+
+        if isinstance(model, torch.nn.DataParallel):
+            model = model.module
 
         # pre-processing n predicting
         preprocess = transforms.Compose(
@@ -55,9 +62,9 @@ def processing_image(
                 transforms.ToTensor(),
             ]
         )
-
-        breast_pred, dense_pred = predict_masks(rgb_image, model)
-        breast_path, dense_path = save_results(
+        img_tensor = load_image(rgb_image)
+        breast_pred, dense_pred = predict_masks(img_tensor, model)
+        breast_path, dense_path, dense_img = save_results(
             rgb_image, breast_pred, dense_pred, save_dir
         )
 
@@ -75,16 +82,23 @@ def processing_image(
             catboost_model,
             threshold=128,
         )
-        # Some elements needed in deploy are outside the function: gotta figure out if i should
-        # copy the lines or if there is another way to incorporate it.
-        masked_dense = background_clean(breast_path, dense_path)
-        quadrant_densities = quadrant_densities(breast_path, dense_path)
-        result = (
-            f"Breast density: {final_density}, Quadrant densities: {quadrant_densities}"
-        )
+        q_densities = quadrant_densities(breast_path, dense_path)
 
-    return result
+        Breast_density = Breast_density.append(final_density)
+        Quad_densities = Quad_densities.append(q_densities)
+
+        if len(uploaded_files) == 2:
+            breast_asymmetry = general_asymmetry_check(Breast_density[0], Breast_density[1])
+            quadrant_asymmetry = quadrant_asymmetry_check(Quad_densities[0],Quad_densities[1])
+        else:
+            breast_asymmetry = "na"
+            quadrant_asymmetry = "na"
+    
+
+
+    return Breast_density, Quad_densities, breast_asymmetry, quadrant_asymmetry
 
 
 # @eel.expose and then you define the function
 # To call: eel.expose(function_in_java)
+
