@@ -21,7 +21,7 @@ def load_file(path):
     """
     try:
         file=pydicom.dcmread(path)  #this reads the data
-        if 'PixelData' not in file:
+        if not hasattr(file, 'PixelData') or not file.PixelData:
             raise ValueError('DICOM file is missing pixel data')
         image= pixel_array(file)    #this converts pixel data into an array
         return(file, image)
