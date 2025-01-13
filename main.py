@@ -16,18 +16,22 @@ from Quadrant_densities import quadrant_densities
 eel.init("Frontend")  # initialising our directory
 eel.start("index.html", mode="default")
 
-
+#Function for integration
 @eel.expose
-def processing_image(
-    uploaded_files,
-):  # uploaded_files will be considered a list since we can have 1 or 2 files
+def processing_image(uploaded_files):  # uploaded_files will be considered a list since we can have 1 or 2 files
+
+    # We use empty lists so we can append the results if uploaded_filed length = 2
     Breast_density = []
     Quad_densities = []
 
+    # Loop through uploaded files in case we upload 2 files
     for uploaded_file in uploaded_files:
+        # First 2 functions from Data_processing.py to turn image pixel data to RGB
         file, image = load_file(uploaded_file)
         rgb_image = convert_rgb(file, image)
 
+        #Lines from Deploy.py
+        
         # CNN model weights
         model_path = Path(r"artifacts/model.pth")
 
@@ -48,8 +52,6 @@ def processing_image(
             activation="sigmoid",
         )
         model = torch.load(model_path, map_location=torch.device("cpu"))
-        # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        # model = model.to(device)
         model.eval()
 
         if isinstance(model, torch.nn.DataParallel):
@@ -62,6 +64,8 @@ def processing_image(
                 transforms.ToTensor(),
             ]
         )
+
+        # Start processing through the CNN (Deploy.py functions)
         img_tensor = load_image(rgb_image)
         breast_pred, dense_pred = predict_masks(img_tensor, model)
         breast_path, dense_path = save_results(
@@ -82,11 +86,15 @@ def processing_image(
             catboost_model,
             threshold=128,
         )
+
+        # Get the quadrant densities from Quadrant_densities.py
         q_densities = quadrant_densities(breast_path, dense_path)
 
+        # Append the results into the list so we can save them
         Breast_density.append(final_density)
         Quad_densities.append(q_densities)
 
+    # Checking for asymmetry if 2 images are uploaded using Asymmetry_check
     if len(uploaded_files) == 2:
         breast_asymmetry = general_asymmetry_check(Breast_density[0], Breast_density[1])
         quadrant_asymmetry = quadrant_asymmetry_check(
