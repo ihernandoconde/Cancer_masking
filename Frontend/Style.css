@@ -210,6 +210,14 @@
     grid-gap: 20px;
 
 }
+#subtitle {
+    display: grid;
+    grid-template-columns:10fr ;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 20px;
+
+}
 .main__content h1{
     font-size: 2.5rem;
     color: #ff6c8e;
@@ -218,7 +226,7 @@
 }
 .main__content h2{
     font-size: 1.5rem;
-    color: #ff6c8e;
+    color: rgba(255, 108, 159, 0.78);
     font-weight:40;
     margin-top: 1rem;
 }
@@ -236,6 +244,15 @@
     line-height: 1.7; /*interline spacing*/
     font-weight: 100;/*Thickness of the font*/
     text-align: justify;/*overwrites the center alignment in .main__content*/
+}
+.warning_text p{
+    margin-top: 14px;
+    margin-bottom: 25px;
+    font-size: 1.15rem;
+    color: darkred;
+    line-height: 1.7;
+    font-weight: 100;
+    text-align: justify;
 }
 #file_chosen {
     font-size: 0.9rem;
