@@ -13,10 +13,10 @@ from Asymmetry_check import general_asymmetry_check, quadrant_asymmetry_check
 from Quadrant_densities import quadrant_densities
 
 """
-This codde has the function which integrates all the code together. 
+This code has the function which integrates all the codes together. 
 It takes the files we want to upload as input (either 1 or 2 files)
 It outputs the breast density, the quadrant densities, the breast asymmetry
-and the quadrant asymetry. 
+and the quadrant asymmetry. 
 This code does not include the frontend. This shows that the integration works 
 in case the frontend ends up not working.
 """
