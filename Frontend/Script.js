@@ -1,7 +1,7 @@
 const menu = document.querySelector('#mobile-menu'); /*selects as a CSS selector, it returns the first item*/
 const menuLinks = document.querySelector('.navbar__menu');
 const upload_button=document.getElementById('upload_button');
-const file_chosen=document.getElementById('file_chosen');
+const file_chosen=document.getElementById('file_chosen')
 const button=document.querySelector('.main__button');
 const label2=document.getElementById('label2');
 
@@ -34,10 +34,7 @@ upload_button.addEventListener('change', function () { //when button is used
 /* A function that contains all the different explanations of the BI-RADS category. Goes on the page
 where their category is revealed.*/
 function density_explanation(density) {
-     if (density === 0){
-         paragraph_content = "This is working"
-     }
-     else if (density <25) {
+     if (density <25) {
                paragraph_content = "Category A: The breast is mostly fatty. This means any abnormalities" +
                    " (such as cancer) can be easily seen on the mammogram. If the radiologist didn’t notice " +
                    "anything out of ordinary, then there probably isn’t. "
@@ -92,7 +89,6 @@ button.addEventListener('click', function () {
                 density = gen_density[0];
                 console.log(density);
                 paragraph_content = density_explanation(density);
-
             })
         }
         reader.readAsArrayBuffer(fileContent[0]);

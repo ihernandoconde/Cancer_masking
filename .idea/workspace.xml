@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba9317f-e4f4-432e-a47d-80fd24d5238e" name="Changes" comment="Adjusting the style">
-      <change beforePath="$PROJECT_DIR$/.idea/cancer_masking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cancer_masking.iml" afterDir="false" />
+    <list default="true" id="cba9317f-e4f4-432e-a47d-80fd24d5238e" name="Changes" comment="General HTML details">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Uploading_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Uploading_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +52,17 @@
     &quot;assignee&quot;: &quot;ihernandoconde&quot;
   }
 }</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Mary-Prabah/cancer_masking.git&quot;,
-    &quot;accountId&quot;: &quot;90c20540-5977-4c23-ad8b-25963b9755f9&quot;
+    &quot;url&quot;: &quot;https://github.com/ihernandoconde/cancer_masking.git&quot;,
+    &quot;accountId&quot;: &quot;0ef4913a-8e68-41d8-b990-4d3ff997d628&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -84,6 +90,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/marya/AppData/Roaming/JetBrains/PyCharm2024.3/node/versions/22.12.0/node.exe&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -111,7 +119,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.11 (PyCharmMiscProject)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -157,6 +164,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.9" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -169,8 +177,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
-        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -198,6 +206,7 @@
       <workItem from="1736777178662" duration="2385000" />
       <workItem from="1736779878407" duration="153000" />
       <workItem from="1736780039741" duration="8547000" />
+      <workItem from="1736814639069" duration="5678000" />
     </task>
     <task id="LOCAL-00001" summary="Changes made by Mary">
       <option name="closed" value="true" />
@@ -343,7 +352,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736779183989</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Charities_page.html detailing">
+      <option name="closed" value="true" />
+      <created>1736816752280</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1736816752280</updated>
+    </task>
+    <task id="LOCAL-00020" summary="General HTML details">
+      <option name="closed" value="true" />
+      <created>1736818373639</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1736818373639</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +389,9 @@
     <MESSAGE value="Changes made by Mary" />
     <MESSAGE value="Added the display of the processed image. We have to connect the CNN output to the code. For now, it just displays the alternative text." />
     <MESSAGE value="Adjusting the style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusting the style" />
+    <MESSAGE value="Charities_page.html detailing" />
+    <MESSAGE value="General HTML details" />
+    <option name="LAST_COMMIT_MESSAGE" value="General HTML details" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -381,7 +408,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend/Script.js</url>
-          <line>95</line>
+          <line>102</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
