@@ -12,6 +12,14 @@ from CNN.Deploy import load_image, predict_masks, save_results, compute_density_
 from Asymmetry_check import general_asymmetry_check, quadrant_asymmetry_check
 from Quadrant_densities import quadrant_densities
 
+"""
+This code has the function which integrates all the code together. 
+It takes the files we want to upload as input (either 1 or 2 files)
+It outputs the breast density, the quadrant densities, the breast asymmetry
+and the quadrant asymmetry. 
+It is also connected to eel, which links it to the frontend. When run, the website is launched and files can be uploaded,
+and results can be displayed.
+"""
 
 #Function for integration
 @eel.expose
