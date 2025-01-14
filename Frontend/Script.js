@@ -92,7 +92,6 @@ button.addEventListener('click', function () {
                 density = gen_density[0];
                 console.log(density);
                 paragraph_content = density_explanation(density);
-
             })
         }
         reader.readAsArrayBuffer(fileContent[0]);

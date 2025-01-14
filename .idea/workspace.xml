@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba9317f-e4f4-432e-a47d-80fd24d5238e" name="Changes" comment="Adjusting the style">
+    <list default="true" id="cba9317f-e4f4-432e-a47d-80fd24d5238e" name="Changes" comment="Charities_page.html detailing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/About_us_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/About_us_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Charities_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Charities_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Tech_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Tech_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +198,7 @@
       <workItem from="1736777178662" duration="2385000" />
       <workItem from="1736779878407" duration="153000" />
       <workItem from="1736780039741" duration="8547000" />
-      <workItem from="1736814639069" duration="2019000" />
+      <workItem from="1736814639069" duration="3380000" />
     </task>
     <task id="LOCAL-00001" summary="Changes made by Mary">
       <option name="closed" value="true" />
@@ -343,7 +344,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736779183989</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Charities_page.html detailing">
+      <option name="closed" value="true" />
+      <created>1736816752280</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1736816752280</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +373,8 @@
     <MESSAGE value="Changes made by Mary" />
     <MESSAGE value="Added the display of the processed image. We have to connect the CNN output to the code. For now, it just displays the alternative text." />
     <MESSAGE value="Adjusting the style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusting the style" />
+    <MESSAGE value="Charities_page.html detailing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Charities_page.html detailing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -381,7 +391,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend/Script.js</url>
-          <line>95</line>
+          <line>94</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
