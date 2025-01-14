@@ -187,6 +187,19 @@
     max-width: 1300px;
     grid-gap: 50px;
 }
+.main__container__results{
+    display: grid;/*The items are placed in a grid*/
+    grid-template-columns: 1fr; /*evenly split*/
+    align-items: center ;
+    justify-content: center;
+    margin: 0 auto;
+    height: 40rem;
+    padding: 0 50px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    grid-gap: 50px;
+}
 .main__content {
      display: flex;
      flex-direction: column;

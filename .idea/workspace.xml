@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba9317f-e4f4-432e-a47d-80fd24d5238e" name="Changes" comment="Charities_page.html detailing">
+    <list default="true" id="cba9317f-e4f4-432e-a47d-80fd24d5238e" name="Changes" comment="General HTML details">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Tech_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Tech_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Uploading_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Uploading_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,12 +52,19 @@
     &quot;assignee&quot;: &quot;ihernandoconde&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ihernandoconde/cancer_masking.git",
-    "accountId": "0ef4913a-8e68-41d8-b990-4d3ff997d628"
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ihernandoconde/cancer_masking.git&quot;,
+    &quot;accountId&quot;: &quot;0ef4913a-8e68-41d8-b990-4d3ff997d628&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -66,43 +73,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Flask server.cancer_masking.executor": "Run",
-    "JavaScript Debug.Charities_page.html.executor": "Run",
-    "JavaScript Debug.Page_2.html.executor": "Run",
-    "JavaScript Debug.Tech_page.html.executor": "Run",
-    "JavaScript Debug.Uploading_page.html.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Run",
-    "Node.js.Script.js.executor": "Run",
-    "Python.Home.executor": "Run",
-    "Python.Main.executor": "Debug",
-    "Python.cancer_masking.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/marya/AppData/Roaming/JetBrains/PyCharm2024.3/node/versions/22.12.0/node.exe",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Flask server.cancer_masking.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Charities_page.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Page_2.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Tech_page.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Uploading_page.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Script.js.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Home.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.cancer_masking.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marya/AppData/Roaming/JetBrains/PyCharm2024.3/node/versions/22.12.0/node.exe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\marya\Software_engineering\Group project\cancer_masking" />
       <recent name="C:\Users\marya\Software_engineering\Group project\cancer_masking\Frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Flask server.cancer_masking">
+  <component name="RunManager">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="breast_masking" />
       <option name="ENV_FILES" value="" />
@@ -157,6 +164,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.9" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -198,7 +206,7 @@
       <workItem from="1736777178662" duration="2385000" />
       <workItem from="1736779878407" duration="153000" />
       <workItem from="1736780039741" duration="8547000" />
-      <workItem from="1736814639069" duration="3380000" />
+      <workItem from="1736814639069" duration="5678000" />
     </task>
     <task id="LOCAL-00001" summary="Changes made by Mary">
       <option name="closed" value="true" />
@@ -352,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736816752280</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="General HTML details">
+      <option name="closed" value="true" />
+      <created>1736818373639</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1736818373639</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +390,8 @@
     <MESSAGE value="Added the display of the processed image. We have to connect the CNN output to the code. For now, it just displays the alternative text." />
     <MESSAGE value="Adjusting the style" />
     <MESSAGE value="Charities_page.html detailing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Charities_page.html detailing" />
+    <MESSAGE value="General HTML details" />
+    <option name="LAST_COMMIT_MESSAGE" value="General HTML details" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -391,7 +408,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend/Script.js</url>
-          <line>94</line>
+          <line>102</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
