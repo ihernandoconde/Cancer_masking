@@ -435,4 +435,40 @@
         align-items: center;
         margin-bottom: 1rem;
     }
+
+}
+/*
+Style for Privacy page
+ */
+#policy_h1 {
+    text-align: justify;
+    font-size: 2.5rem;
+    margin: 2rem 2rem;
+}
+
+.policy_h2 {
+    text-align: justify;
+    font-size: 1.3rem;
+    margin: 1.2rem 2rem;
+}
+.policy_h3 {
+    text-align: justify;
+    font-size: 1.05rem;
+    margin: 1.5rem 2rem;
+
+}
+.policy_paragraph {
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin: 1.5rem 2rem;
+}
+.policy_ul {
+    list-style-type: square;
+    margin: 1rem 2rem;
+}
+.policy_ul li {
+    margin: 0.5rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
