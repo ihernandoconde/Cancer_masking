@@ -28,7 +28,7 @@ def test_inference_script():
         text=True
     )
 
-    # 5) print subprocess stdout/stderr (pytest -s)
+    # print subprocess stdout/stderr (pytest -s)
     print("STDOUT:", ret.stdout)
     print("STDERR:", ret.stderr)
 
