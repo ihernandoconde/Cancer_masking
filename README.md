@@ -1,3 +1,4 @@
+## Code introduction
 In order for the code to be run, some elements have to be in the directory, that could not be uploaded on the Githubb main branch:
 
 - An empty folder called "outputs"
