@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cba9317f-e4f4-432e-a47d-80fd24d5238e" name="Changes" comment="Adjusting the style">
-      <change beforePath="$PROJECT_DIR$/.idea/cancer_masking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cancer_masking.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/Uploading_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Uploading_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/About_us_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/About_us_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Charities_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Charities_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,12 +51,12 @@
     &quot;assignee&quot;: &quot;ihernandoconde&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Mary-Prabah/cancer_masking.git&quot;,
-    &quot;accountId&quot;: &quot;90c20540-5977-4c23-ad8b-25963b9755f9&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ihernandoconde/cancer_masking.git",
+    "accountId": "0ef4913a-8e68-41d8-b990-4d3ff997d628"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -67,41 +65,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Flask server.cancer_masking.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.Charities_page.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.Page_2.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.Tech_page.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.Uploading_page.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.Script.js.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Home.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Main.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.cancer_masking.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marya/AppData/Roaming/JetBrains/PyCharm2024.3/node/versions/22.12.0/node.exe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Flask server.cancer_masking.executor": "Run",
+    "JavaScript Debug.Charities_page.html.executor": "Run",
+    "JavaScript Debug.Page_2.html.executor": "Run",
+    "JavaScript Debug.Tech_page.html.executor": "Run",
+    "JavaScript Debug.Uploading_page.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "Node.js.Script.js.executor": "Run",
+    "Python.Home.executor": "Run",
+    "Python.Main.executor": "Debug",
+    "Python.cancer_masking.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/marya/AppData/Roaming/JetBrains/PyCharm2024.3/node/versions/22.12.0/node.exe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\marya\Software_engineering\Group project\cancer_masking" />
       <recent name="C:\Users\marya\Software_engineering\Group project\cancer_masking\Frontend" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Flask server.cancer_masking">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="breast_masking" />
       <option name="ENV_FILES" value="" />
@@ -111,7 +111,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.11 (PyCharmMiscProject)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -169,8 +168,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
-        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -198,6 +197,7 @@
       <workItem from="1736777178662" duration="2385000" />
       <workItem from="1736779878407" duration="153000" />
       <workItem from="1736780039741" duration="8547000" />
+      <workItem from="1736814639069" duration="2019000" />
     </task>
     <task id="LOCAL-00001" summary="Changes made by Mary">
       <option name="closed" value="true" />

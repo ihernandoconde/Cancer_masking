@@ -155,7 +155,7 @@
     align-items: center ;
     justify-content: center;
     margin: 0 auto;
-    height: 200vh;
+    height: auto;
     padding: 0 50px;
     z-index: 1;
     width: 100%;
@@ -163,11 +163,24 @@
 }
 .main__container__about__us{
     display: grid;/*The items are placed in a grid*/
-    grid-template-columns: 1fr 0.5fr; /*evenly split*/
+    grid-template-columns: 1fr 0fr; /*evenly split*/
     align-items: center ;
     justify-content: center;
     margin: 0 auto;
-    height: 100vh;
+    height: 60rem;
+    padding: 0 50px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    grid-gap: 50px;
+}
+.main__container__charities{
+    display: grid;/*The items are placed in a grid*/
+    grid-template-columns: 1fr 0fr; /*evenly split*/
+    align-items: center ;
+    justify-content: center;
+    margin: 0 auto;
+    height: auto;
     padding: 0 50px;
     z-index: 1;
     width: 100%;
@@ -191,7 +204,7 @@
 }
 #introduction_grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.5fr ;
     align-items: center;
     justify-content: center;
     grid-gap: 20px;
@@ -204,16 +217,16 @@
     margin: 2rem auto;
 }
 .main__content h2{
-    font-size: 1rem;
-    color: black;
-    font-weight:200;
+    font-size: 1.5rem;
+    color: #ff6c8e;
+    font-weight:40;
     margin-top: 1rem;
 }
 .main__content h3{
-    font-size: 2rem;
-    color: #ff6c8e;
-    font-weight: 800;
-    margin-top: 2rem;
+    font-size: 1rem;
+    color: black;
+    font-weight: 200;
+    margin-top: 1rem;
 }
 .main__text p{
     margin-top: 14px;
@@ -228,7 +241,8 @@
     font-size: 0.9rem;
     color: black;
     font-weight:200;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+
 }
 .main__img--container {
     text-align: center;
@@ -250,6 +264,7 @@
     transition: all 0.3s ease;
     position: relative;
 }
+
 #label2 {
     margin-top: 1rem;
     background-color: #ff6c8e;
@@ -324,7 +339,6 @@
 .footer__container {
     background-color: rgba(243, 187, 200, 0.89);
     position: sticky;
-    margin-top: 75rem;
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
